@@ -1,0 +1,18 @@
+<div id="event">
+<h1>FirstLook Icons</h1>
+<div id="new_link">
+	<%= link_to 'New Icon', new_icon_path %>
+</div>
+<% @icons.each do |icon| %>
+	<div class="main">
+		<%= image_tag icon.thumbnail.url(:thumb) %>
+	<div class="header">
+    	<h3><%= link_to icon.name, icon %></h3>
+	</div>
+	<div class="actions">
+    	<%= link_to 'Show', icon %>
+    	<%= link_to 'Edit', edit_icon_path(icon) %>
+	</div>
+	</div>
+<% end %>
+<br />

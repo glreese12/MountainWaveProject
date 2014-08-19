@@ -1,0 +1,971 @@
+LOG:  database system was shut down at 2013-07-08 16:14:01 MDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  role "postgres" does not exist
+FATAL:  role "postgres" does not exist
+FATAL:  role "postgres" does not exist
+FATAL:  role "postgres" does not exist
+FATAL:  database "nate" does not exist
+FATAL:  database "du" does not exist
+FATAL:  database "firstlookmessaging_test" does not exist
+FATAL:  database "firstlookmessaging_development" does not exist
+ERROR:  relation "categories_events" does not exist at character 580
+STATEMENT:            SELECT attr.attname, seq.relname
+	          FROM pg_class      seq,
+	               pg_attribute  attr,
+	               pg_depend     dep,
+	               pg_namespace  name,
+	               pg_constraint cons
+	          WHERE seq.oid           = dep.objid
+	            AND seq.relkind       = 'S'
+	            AND attr.attrelid     = dep.refobjid
+	            AND attr.attnum       = dep.refobjsubid
+	            AND attr.attrelid     = cons.conrelid
+	            AND attr.attnum       = cons.conkey[1]
+	            AND cons.contype      = 'p'
+	            AND dep.refobjid      = '"categories_events"'::regclass
+	
+ERROR:  relation "events" does not exist at character 24
+STATEMENT:  SELECT "events".* FROM "events" WHERE (event_date >= '2012-07-08 22:19:29.576426') ORDER BY event_date DESC
+ERROR:  relation "events" does not exist at character 24
+STATEMENT:  SELECT "events".* FROM "events" WHERE (event_date >= '2012-07-08 22:19:29.576426') ORDER BY event_date DESC
+ERROR:  relation "events" does not exist at character 24
+STATEMENT:  SELECT "events".* FROM "events" WHERE (event_date >= '2012-07-08 22:19:29.576426') ORDER BY event_date DESC
+FATAL:  database "nate" does not exist
+FATAL:  database "flms" does not exist
+ERROR:  unrecognized configuration parameter "tables"
+STATEMENT:  show tables;
+ERROR:  schema "firstlookmessaging_test" does not exist at character 15
+STATEMENT:  select * from firstlookmessaging_test.pg_tables
+	;
+ERROR:  syntax error at or near "rails" at character 1
+STATEMENT:  rails
+	;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.categories OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.categories_events OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.categories_id_seq OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.events OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.events_id_seq OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.icons OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.icons_id_seq OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.point_of_interests OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.point_of_interests_id_seq OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.schema_migrations OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.subscribers OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.subscribers_id_seq OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.users OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.users_id_seq OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  GRANT ALL ON SCHEMA flms TO flms;
+ERROR:  schema "flms" already exists
+STATEMENT:  CREATE SCHEMA flms;
+ERROR:  relation "categories" already exists
+STATEMENT:  CREATE TABLE categories (
+	    id integer NOT NULL,
+	    name character varying(255),
+	    description text,
+	    created_at timestamp without time zone,
+	    updated_at timestamp without time zone,
+	    thumbnail_file_name character varying(255),
+	    thumbnail_content_type character varying(255),
+	    thumbnail_file_size integer,
+	    thumbnail_updated_at timestamp without time zone
+	);
+ERROR:  relation "categories_events" already exists
+STATEMENT:  CREATE TABLE categories_events (
+	    category_id integer,
+	    event_id integer
+	);
+ERROR:  relation "categories_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE categories_id_seq
+	    INCREMENT BY 1
+	    NO MAXVALUE
+	    NO MINVALUE
+	    CACHE 1;
+ERROR:  relation "events" already exists
+STATEMENT:  CREATE TABLE events (
+	    id integer NOT NULL,
+	    name character varying(255),
+	    description character varying(255),
+	    latitude double precision,
+	    longitude double precision,
+	    event_date timestamp without time zone,
+	    created_at timestamp without time zone,
+	    updated_at timestamp without time zone,
+	    news_link character varying(255),
+	    glide_number character varying(255),
+	    event_label character varying(255),
+	    aoi_size integer,
+	    active_start_date timestamp without time zone,
+	    active_end_date timestamp without time zone,
+	    firstwatch_link character varying(255),
+	    icon_id integer,
+	    available_in_r3 boolean DEFAULT false,
+	    available_in_commercial boolean DEFAULT true
+	);
+ERROR:  relation "events_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE events_id_seq
+	    INCREMENT BY 1
+	    NO MAXVALUE
+	    NO MINVALUE
+	    CACHE 1;
+ERROR:  relation "icons" already exists
+STATEMENT:  CREATE TABLE icons (
+	    id integer NOT NULL,
+	    name character varying(255),
+	    thumbnail_file_name character varying(255),
+	    thumbnail_content_type character varying(255),
+	    thumbnail_file_size integer,
+	    thumbnail_updated_at timestamp without time zone,
+	    created_at timestamp without time zone,
+	    updated_at timestamp without time zone
+	);
+ERROR:  relation "icons_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE icons_id_seq
+	    INCREMENT BY 1
+	    NO MAXVALUE
+	    NO MINVALUE
+	    CACHE 1;
+ERROR:  relation "point_of_interests" already exists
+STATEMENT:  CREATE TABLE point_of_interests (
+	    id integer NOT NULL,
+	    event_id integer,
+	    name character varying(255),
+	    description text,
+	    latitude double precision,
+	    longitude double precision,
+	    created_at timestamp without time zone,
+	    updated_at timestamp without time zone
+	);
+ERROR:  relation "point_of_interests_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE point_of_interests_id_seq
+	    INCREMENT BY 1
+	    NO MAXVALUE
+	    NO MINVALUE
+	    CACHE 1;
+ERROR:  relation "schema_migrations" already exists
+STATEMENT:  CREATE TABLE schema_migrations (
+	    version character varying(255) NOT NULL
+	);
+ERROR:  relation "subscribers" already exists
+STATEMENT:  CREATE TABLE subscribers (
+	    id integer NOT NULL,
+	    first_name character varying(255),
+	    last_name character varying(255),
+	    email character varying(255),
+	    created_at timestamp without time zone,
+	    updated_at timestamp without time zone
+	);
+ERROR:  relation "subscribers_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE subscribers_id_seq
+	    INCREMENT BY 1
+	    NO MAXVALUE
+	    NO MINVALUE
+	    CACHE 1;
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+	    id integer NOT NULL,
+	    email character varying(255) DEFAULT ''::character varying NOT NULL,
+	    encrypted_password character varying(128) DEFAULT ''::character varying NOT NULL,
+	    reset_password_token character varying(255),
+	    reset_password_sent_at timestamp without time zone,
+	    remember_created_at timestamp without time zone,
+	    sign_in_count integer DEFAULT 0,
+	    current_sign_in_at timestamp without time zone,
+	    last_sign_in_at timestamp without time zone,
+	    current_sign_in_ip character varying(255),
+	    last_sign_in_ip character varying(255),
+	    created_at timestamp without time zone,
+	    updated_at timestamp without time zone
+	);
+ERROR:  relation "users_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE users_id_seq
+	    INCREMENT BY 1
+	    NO MAXVALUE
+	    NO MINVALUE
+	    CACHE 1;
+ERROR:  duplicate key value violates unique constraint "categories_pkey"
+DETAIL:  Key (id)=(3) already exists.
+CONTEXT:  COPY categories, line 5: ""
+STATEMENT:  COPY categories (id, name, description, created_at, updated_at, thumbnail_file_name, thumbnail_content_type, thumbnail_file_size, thumbnail_updated_at) FROM stdin;
+ERROR:  duplicate key value violates unique constraint "events_pkey"
+DETAIL:  Key (id)=(423) already exists.
+CONTEXT:  COPY events, line 223: "221	Upper Midwest Flooding - Ashton	Flood	44.997	-98.480999999999995	2011-06-03 00:00:00	2011-06-03 ..."
+STATEMENT:  COPY events (id, name, description, latitude, longitude, event_date, created_at, updated_at, news_link, glide_number, event_label, aoi_size, active_start_date, active_end_date, firstwatch_link, icon_id, available_in_r3, available_in_commercial) FROM stdin;
+ERROR:  duplicate key value violates unique constraint "icons_pkey"
+DETAIL:  Key (id)=(1) already exists.
+CONTEXT:  COPY icons, line 21: ""
+STATEMENT:  COPY icons (id, name, thumbnail_file_name, thumbnail_content_type, thumbnail_file_size, thumbnail_updated_at, created_at, updated_at) FROM stdin;
+ERROR:  duplicate key value violates unique constraint "point_of_interests_pkey"
+DETAIL:  Key (id)=(3) already exists.
+CONTEXT:  COPY point_of_interests, line 312: ""
+STATEMENT:  COPY point_of_interests (id, event_id, name, description, latitude, longitude, created_at, updated_at) FROM stdin;
+ERROR:  duplicate key value violates unique constraint "unique_schema_migrations"
+DETAIL:  Key (version)=(20110330215044) already exists.
+CONTEXT:  COPY schema_migrations, line 24: ""
+STATEMENT:  COPY schema_migrations (version) FROM stdin;
+ERROR:  duplicate key value violates unique constraint "subscribers_pkey"
+DETAIL:  Key (id)=(1) already exists.
+CONTEXT:  COPY subscribers, line 7: ""
+STATEMENT:  COPY subscribers (id, first_name, last_name, email, created_at, updated_at) FROM stdin;
+ERROR:  duplicate key value violates unique constraint "users_pkey"
+DETAIL:  Key (id)=(3) already exists.
+CONTEXT:  COPY users, line 5: ""
+STATEMENT:  COPY users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at) FROM stdin;
+ERROR:  multiple primary keys for table "categories" are not allowed
+STATEMENT:  ALTER TABLE ONLY categories
+	    ADD CONSTRAINT categories_pkey PRIMARY KEY (id);
+ERROR:  multiple primary keys for table "events" are not allowed
+STATEMENT:  ALTER TABLE ONLY events
+	    ADD CONSTRAINT events_pkey PRIMARY KEY (id);
+ERROR:  multiple primary keys for table "icons" are not allowed
+STATEMENT:  ALTER TABLE ONLY icons
+	    ADD CONSTRAINT icons_pkey PRIMARY KEY (id);
+ERROR:  multiple primary keys for table "point_of_interests" are not allowed
+STATEMENT:  ALTER TABLE ONLY point_of_interests
+	    ADD CONSTRAINT point_of_interests_pkey PRIMARY KEY (id);
+ERROR:  multiple primary keys for table "subscribers" are not allowed
+STATEMENT:  ALTER TABLE ONLY subscribers
+	    ADD CONSTRAINT subscribers_pkey PRIMARY KEY (id);
+ERROR:  multiple primary keys for table "users" are not allowed
+STATEMENT:  ALTER TABLE ONLY users
+	    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+ERROR:  relation "index_users_on_email" already exists
+STATEMENT:  CREATE UNIQUE INDEX index_users_on_email ON users USING btree (email);
+ERROR:  relation "index_users_on_reset_password_token" already exists
+STATEMENT:  CREATE UNIQUE INDEX index_users_on_reset_password_token ON users USING btree (reset_password_token);
+ERROR:  relation "unique_schema_migrations" already exists
+STATEMENT:  CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
+ERROR:  role "flms" does not exist
+STATEMENT:  GRANT ALL ON SCHEMA flms TO flms;
+ERROR:  relation "event" does not exist at character 21
+STATEMENT:  select max(id) from event;
+ERROR:  schema "flms" already exists
+STATEMENT:  CREATE SCHEMA flms;
+ERROR:  relation "categories" already exists
+STATEMENT:  CREATE TABLE categories (
+	    id integer NOT NULL,
+	    name character varying(255),
+	    description text,
+	    created_at timestamp without time zone,
+	    updated_at timestamp without time zone,
+	    thumbnail_file_name character varying(255),
+	    thumbnail_content_type character varying(255),
+	    thumbnail_file_size integer,
+	    thumbnail_updated_at timestamp without time zone
+	);
+ERROR:  relation "categories_events" already exists
+STATEMENT:  CREATE TABLE categories_events (
+	    category_id integer,
+	    event_id integer
+	);
+ERROR:  relation "categories_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE categories_id_seq
+	    INCREMENT BY 1
+	    NO MAXVALUE
+	    NO MINVALUE
+	    CACHE 1;
+ERROR:  relation "events" already exists
+STATEMENT:  CREATE TABLE events (
+	    id integer NOT NULL,
+	    name character varying(255),
+	    description character varying(255),
+	    latitude double precision,
+	    longitude double precision,
+	    event_date timestamp without time zone,
+	    created_at timestamp without time zone,
+	    updated_at timestamp without time zone,
+	    news_link character varying(255),
+	    glide_number character varying(255),
+	    event_label character varying(255),
+	    aoi_size integer,
+	    active_start_date timestamp without time zone,
+	    active_end_date timestamp without time zone,
+	    firstwatch_link character varying(255),
+	    icon_id integer,
+	    available_in_r3 boolean DEFAULT false,
+	    available_in_commercial boolean DEFAULT true
+	);
+ERROR:  relation "events_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE events_id_seq
+	    INCREMENT BY 1
+	    NO MAXVALUE
+	    NO MINVALUE
+	    CACHE 1;
+ERROR:  relation "icons" already exists
+STATEMENT:  CREATE TABLE icons (
+	    id integer NOT NULL,
+	    name character varying(255),
+	    thumbnail_file_name character varying(255),
+	    thumbnail_content_type character varying(255),
+	    thumbnail_file_size integer,
+	    thumbnail_updated_at timestamp without time zone,
+	    created_at timestamp without time zone,
+	    updated_at timestamp without time zone
+	);
+ERROR:  relation "icons_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE icons_id_seq
+	    INCREMENT BY 1
+	    NO MAXVALUE
+	    NO MINVALUE
+	    CACHE 1;
+ERROR:  relation "point_of_interests" already exists
+STATEMENT:  CREATE TABLE point_of_interests (
+	    id integer NOT NULL,
+	    event_id integer,
+	    name character varying(255),
+	    description text,
+	    latitude double precision,
+	    longitude double precision,
+	    created_at timestamp without time zone,
+	    updated_at timestamp without time zone
+	);
+ERROR:  relation "point_of_interests_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE point_of_interests_id_seq
+	    INCREMENT BY 1
+	    NO MAXVALUE
+	    NO MINVALUE
+	    CACHE 1;
+ERROR:  relation "schema_migrations" already exists
+STATEMENT:  CREATE TABLE schema_migrations (
+	    version character varying(255) NOT NULL
+	);
+ERROR:  relation "subscribers" already exists
+STATEMENT:  CREATE TABLE subscribers (
+	    id integer NOT NULL,
+	    first_name character varying(255),
+	    last_name character varying(255),
+	    email character varying(255),
+	    created_at timestamp without time zone,
+	    updated_at timestamp without time zone
+	);
+ERROR:  relation "subscribers_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE subscribers_id_seq
+	    INCREMENT BY 1
+	    NO MAXVALUE
+	    NO MINVALUE
+	    CACHE 1;
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+	    id integer NOT NULL,
+	    email character varying(255) DEFAULT ''::character varying NOT NULL,
+	    encrypted_password character varying(128) DEFAULT ''::character varying NOT NULL,
+	    reset_password_token character varying(255),
+	    reset_password_sent_at timestamp without time zone,
+	    remember_created_at timestamp without time zone,
+	    sign_in_count integer DEFAULT 0,
+	    current_sign_in_at timestamp without time zone,
+	    last_sign_in_at timestamp without time zone,
+	    current_sign_in_ip character varying(255),
+	    last_sign_in_ip character varying(255),
+	    created_at timestamp without time zone,
+	    updated_at timestamp without time zone
+	);
+ERROR:  relation "users_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE users_id_seq
+	    INCREMENT BY 1
+	    NO MAXVALUE
+	    NO MINVALUE
+	    CACHE 1;
+ERROR:  duplicate key value violates unique constraint "categories_pkey"
+DETAIL:  Key (id)=(3) already exists.
+CONTEXT:  COPY categories, line 5: ""
+STATEMENT:  COPY categories (id, name, description, created_at, updated_at, thumbnail_file_name, thumbnail_content_type, thumbnail_file_size, thumbnail_updated_at) FROM stdin;
+ERROR:  duplicate key value violates unique constraint "events_pkey"
+DETAIL:  Key (id)=(423) already exists.
+CONTEXT:  COPY events, line 223: "221	Upper Midwest Flooding - Ashton	Flood	44.997	-98.480999999999995	2011-06-03 00:00:00	2011-06-03 ..."
+STATEMENT:  COPY events (id, name, description, latitude, longitude, event_date, created_at, updated_at, news_link, glide_number, event_label, aoi_size, active_start_date, active_end_date, firstwatch_link, icon_id, available_in_r3, available_in_commercial) FROM stdin;
+ERROR:  duplicate key value violates unique constraint "icons_pkey"
+DETAIL:  Key (id)=(1) already exists.
+CONTEXT:  COPY icons, line 21: ""
+STATEMENT:  COPY icons (id, name, thumbnail_file_name, thumbnail_content_type, thumbnail_file_size, thumbnail_updated_at, created_at, updated_at) FROM stdin;
+ERROR:  duplicate key value violates unique constraint "point_of_interests_pkey"
+DETAIL:  Key (id)=(3) already exists.
+CONTEXT:  COPY point_of_interests, line 312: ""
+STATEMENT:  COPY point_of_interests (id, event_id, name, description, latitude, longitude, created_at, updated_at) FROM stdin;
+ERROR:  duplicate key value violates unique constraint "unique_schema_migrations"
+DETAIL:  Key (version)=(20110330215044) already exists.
+CONTEXT:  COPY schema_migrations, line 24: ""
+STATEMENT:  COPY schema_migrations (version) FROM stdin;
+ERROR:  duplicate key value violates unique constraint "subscribers_pkey"
+DETAIL:  Key (id)=(1) already exists.
+CONTEXT:  COPY subscribers, line 7: ""
+STATEMENT:  COPY subscribers (id, first_name, last_name, email, created_at, updated_at) FROM stdin;
+ERROR:  duplicate key value violates unique constraint "users_pkey"
+DETAIL:  Key (id)=(3) already exists.
+CONTEXT:  COPY users, line 5: ""
+STATEMENT:  COPY users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at) FROM stdin;
+ERROR:  multiple primary keys for table "categories" are not allowed
+STATEMENT:  ALTER TABLE ONLY categories
+	    ADD CONSTRAINT categories_pkey PRIMARY KEY (id);
+ERROR:  multiple primary keys for table "events" are not allowed
+STATEMENT:  ALTER TABLE ONLY events
+	    ADD CONSTRAINT events_pkey PRIMARY KEY (id);
+ERROR:  multiple primary keys for table "icons" are not allowed
+STATEMENT:  ALTER TABLE ONLY icons
+	    ADD CONSTRAINT icons_pkey PRIMARY KEY (id);
+ERROR:  multiple primary keys for table "point_of_interests" are not allowed
+STATEMENT:  ALTER TABLE ONLY point_of_interests
+	    ADD CONSTRAINT point_of_interests_pkey PRIMARY KEY (id);
+ERROR:  multiple primary keys for table "subscribers" are not allowed
+STATEMENT:  ALTER TABLE ONLY subscribers
+	    ADD CONSTRAINT subscribers_pkey PRIMARY KEY (id);
+ERROR:  multiple primary keys for table "users" are not allowed
+STATEMENT:  ALTER TABLE ONLY users
+	    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+ERROR:  relation "index_users_on_email" already exists
+STATEMENT:  CREATE UNIQUE INDEX index_users_on_email ON users USING btree (email);
+ERROR:  relation "index_users_on_reset_password_token" already exists
+STATEMENT:  CREATE UNIQUE INDEX index_users_on_reset_password_token ON users USING btree (reset_password_token);
+ERROR:  relation "unique_schema_migrations" already exists
+STATEMENT:  CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
+ERROR:  role "flms" does not exist
+STATEMENT:  GRANT ALL ON SCHEMA flms TO flms;
+ERROR:  cannot drop schema public because other objects depend on it
+DETAIL:  table public.schema_migrations depends on schema public
+	table public.categories depends on schema public
+	table public.events depends on schema public
+	table public.categories_events depends on schema public
+	table public.users depends on schema public
+	table public.point_of_interests depends on schema public
+	table public.subscribers depends on schema public
+	table public.icons depends on schema public
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP SCHEMA public;
+ERROR:  schema "public" already exists
+STATEMENT:  CREATE SCHEMA public;
+ERROR:  role "flms" does not exist
+STATEMENT:  GRANT ALL ON SCHEMA flms TO flms;
+ERROR:  relation "events" does not exist at character 15
+STATEMENT:  select * from events;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP INDEX flms.unique_schema_migrations;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP INDEX flms.index_users_on_reset_password_token;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP INDEX flms.index_users_on_email;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.users DROP CONSTRAINT users_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.subscribers DROP CONSTRAINT subscribers_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.point_of_interests DROP CONSTRAINT point_of_interests_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.icons DROP CONSTRAINT icons_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.events DROP CONSTRAINT events_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.categories DROP CONSTRAINT categories_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.users ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.subscribers ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.point_of_interests ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.icons ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.events ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.categories ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.users_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.users;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.subscribers_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.subscribers;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.schema_migrations;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.point_of_interests_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.point_of_interests;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.icons_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.icons;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.events_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.events;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.categories_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.categories_events;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.categories;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SCHEMA flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  GRANT ALL ON SCHEMA flms TO flms;
+ERROR:  syntax error at or near "firstlookmessaging_test" at character 6
+STATEMENT:  drop firstlookmessaging_test;
+ERROR:  database "firstlookmessaging_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE firstlookmessaging_development;
+	
+ERROR:  database "firstlookmessaging_development" does not exist
+STATEMENT:  DROP DATABASE firstlookmessaging_development;
+	
+FATAL:  database "firstlookmessaging_development" does not exist
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP INDEX flms.unique_schema_migrations;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP INDEX flms.index_users_on_reset_password_token;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP INDEX flms.index_users_on_email;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.users DROP CONSTRAINT users_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.subscribers DROP CONSTRAINT subscribers_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.point_of_interests DROP CONSTRAINT point_of_interests_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.icons DROP CONSTRAINT icons_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.events DROP CONSTRAINT events_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.categories DROP CONSTRAINT categories_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.users ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.subscribers ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.point_of_interests ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.icons ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.events ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.categories ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.users_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.users;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.subscribers_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.subscribers;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.schema_migrations;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.point_of_interests_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.point_of_interests;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.icons_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.icons;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.events_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.events;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.categories_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.categories_events;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.categories;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SCHEMA flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  GRANT ALL ON SCHEMA flms TO flms;
+FATAL:  database "template0" is not currently accepting connections
+ERROR:  role "flms" does not exist
+STATEMENT:  GRANT ALL ON SCHEMA flms TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  GRANT ALL ON SCHEMA flms TO flms;
+ERROR:  syntax error at or near "ls" at character 1
+STATEMENT:  ls
+	;
+ERROR:  invalid input syntax for integer: "3       Natural Disaster        DigitalGlobe is monitoring natural disasters worldwide. 2011-05-18 23:51:25.408123      2011-11-11 23:43:37.661647      cat_natural_dis.png     image/png       2078    2011-11-11 23:43:37.503989"
+CONTEXT:  COPY categories, line 1, column id: "3       Natural Disaster        DigitalGlobe is monitoring natural disasters worldwide. 2011-05-18 2..."
+STATEMENT:  COPY categories (id, name, description, created_at, updated_at, thumbnail_file_name, thumbnail_content_type, thumbnail_file_size, thumbnail_updated_at) FROM stdin;
+ERROR:  invalid input syntax for integer: "3       243"
+CONTEXT:  COPY categories_events, line 1, column category_id: "3       243"
+STATEMENT:  COPY categories_events (category_id, event_id) FROM stdin;
+ERROR:  invalid input syntax for integer: "423     Civil Unrest in Egypt   The U.S. embassy in Cairo closed to the public Tuesday amid civil unrest across Egypt. Some 51 people have died in the violence since Friday, and at least 128 people were injured in overnight clashes that continued into Tuesday morning.    30.065000000000001      31.266999999999999      2013-01-30 16:05:00     2013-01-30 16:23:14.699751      2013-01-30 16:23:14.699751      http://www.upi.com/Top_News/World-News/2013/01/29/Egyptians-defy-Morsi-curfew-death-toll-59/UPI-37741359444600/         Yellow  16      2013-01-30 16:05:00     2013-02-09 16:05:00             19      f       t"
+CONTEXT:  COPY events, line 1, column id: "423     Civil Unrest in Egypt   The U.S. embassy in Cairo closed to the public Tuesday amid civil un..."
+STATEMENT:  COPY events (id, name, description, latitude, longitude, event_date, created_at, updated_at, news_link, glide_number, event_label, aoi_size, active_start_date, active_end_date, firstwatch_link, icon_id, available_in_r3, available_in_commercial) FROM stdin;
+ERROR:  invalid input syntax for integer: "1       Default firstlook_generic_300px.png     image/png       5717    2012-07-30 22:20:06.092118      2012-07-30 22:20:07.496894      2012-07-30 22:20:07.496894"
+CONTEXT:  COPY icons, line 1, column id: "1       Default firstlook_generic_300px.png     image/png       5717    2012-07-30 22:20:06.092118  ..."
+STATEMENT:  COPY icons (id, name, thumbnail_file_name, thumbnail_content_type, thumbnail_file_size, thumbnail_updated_at, created_at, updated_at) FROM stdin;
+ERROR:  invalid input syntax for integer: "3       244     Homs    Corridor between Homs and Ar Rastan     34.812899999999999      36.722200000000001      2011-08-09 18:14:59.057262      2011-08-09 18:14:59.057262"
+CONTEXT:  COPY point_of_interests, line 1, column id: "3       244     Homs    Corridor between Homs and Ar Rastan     34.812899999999999      36.722200000..."
+STATEMENT:  COPY point_of_interests (id, event_id, name, description, latitude, longitude, created_at, updated_at) FROM stdin;
+ERROR:  invalid input syntax for integer: "1       Peter   Battaglia       pbattaglia@digitalglobe.com     2011-12-09 19:30:10.355039      2011-12-09 19:30:10.355039"
+CONTEXT:  COPY subscribers, line 1, column id: "1       Peter   Battaglia       pbattaglia@digitalglobe.com     2011-12-09 19:30:10.355039      2011..."
+STATEMENT:  COPY subscribers (id, first_name, last_name, email, created_at, updated_at) FROM stdin;
+ERROR:  invalid input syntax for integer: "3       mandel@digitalglobe.com $2a$10$euiVyCLRvZm0rBU5Tlrru.HNVhHM3ADZD/I2m/hkAZZu3P0F9pvpq    N      N      N      1       2012-11-27 15:25:39.352478      2012-11-27 15:25:39.352478      10.132.17.10    10.132.17.10    2012-11-27 15:25:39.319478      2012-11-27 15:25:39.361723"
+CONTEXT:  COPY users, line 1, column id: "3       mandel@digitalglobe.com $2a$10$euiVyCLRvZm0rBU5Tlrru.HNVhHM3ADZD/I2m/hkAZZu3P0F9pvpq    N   ..."
+STATEMENT:  COPY users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at) FROM stdin;
+ERROR:  role "flms" does not exist
+STATEMENT:  GRANT ALL ON SCHEMA flms TO flms;
+ERROR:  syntax error at or near "pg_restore" at character 1
+STATEMENT:  pg_restore
+	;
+FATAL:  database "nate" does not exist
+FATAL:  database "firstlookmessaging_development" does not exist
+FATAL:  database "firstlookmessaging_development" does not exist
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP INDEX flms.unique_schema_migrations;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP INDEX flms.index_users_on_reset_password_token;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP INDEX flms.index_users_on_email;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.users DROP CONSTRAINT users_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.subscribers DROP CONSTRAINT subscribers_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.point_of_interests DROP CONSTRAINT point_of_interests_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.icons DROP CONSTRAINT icons_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.events DROP CONSTRAINT events_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.categories DROP CONSTRAINT categories_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.users ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.subscribers ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.point_of_interests ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.icons ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.events ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.categories ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.users_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.users;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.subscribers_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.subscribers;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.schema_migrations;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.point_of_interests_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.point_of_interests;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.icons_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.icons;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.events_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.events;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.categories_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.categories_events;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.categories;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SCHEMA flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  GRANT ALL ON SCHEMA flms TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.categories OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.categories_events OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.categories_id_seq OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.events OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.events_id_seq OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.icons OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.icons_id_seq OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.point_of_interests OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.point_of_interests_id_seq OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.schema_migrations OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.subscribers OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.subscribers_id_seq OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.users OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  ALTER TABLE flms.users_id_seq OWNER TO flms;
+ERROR:  role "flms" does not exist
+STATEMENT:  GRANT ALL ON SCHEMA flms TO flms;
+ERROR:  database "dglabs" already exists
+STATEMENT:  CREATE DATABASE dglabs WITH TEMPLATE = template0 ENCODING = 'UTF8';
+ERROR:  schema "flms" already exists
+STATEMENT:  CREATE SCHEMA flms;
+ERROR:  relation "categories" already exists
+STATEMENT:  CREATE TABLE categories (
+	    id integer NOT NULL,
+	    name character varying(255),
+	    description text,
+	    created_at timestamp without time zone,
+	    updated_at timestamp without time zone,
+	    thumbnail_file_name character varying(255),
+	    thumbnail_content_type character varying(255),
+	    thumbnail_file_size integer,
+	    thumbnail_updated_at timestamp without time zone
+	);
+ERROR:  relation "categories_events" already exists
+STATEMENT:  CREATE TABLE categories_events (
+	    category_id integer,
+	    event_id integer
+	);
+ERROR:  relation "categories_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE categories_id_seq
+	    INCREMENT BY 1
+	    NO MAXVALUE
+	    NO MINVALUE
+	    CACHE 1;
+ERROR:  relation "events" already exists
+STATEMENT:  CREATE TABLE events (
+	    id integer NOT NULL,
+	    name character varying(255),
+	    description character varying(255),
+	    latitude double precision,
+	    longitude double precision,
+	    event_date timestamp without time zone,
+	    created_at timestamp without time zone,
+	    updated_at timestamp without time zone,
+	    news_link character varying(255),
+	    glide_number character varying(255),
+	    event_label character varying(255),
+	    aoi_size integer,
+	    active_start_date timestamp without time zone,
+	    active_end_date timestamp without time zone,
+	    firstwatch_link character varying(255),
+	    icon_id integer,
+	    available_in_r3 boolean DEFAULT false,
+	    available_in_commercial boolean DEFAULT true
+	);
+ERROR:  relation "events_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE events_id_seq
+	    INCREMENT BY 1
+	    NO MAXVALUE
+	    NO MINVALUE
+	    CACHE 1;
+ERROR:  relation "icons" already exists
+STATEMENT:  CREATE TABLE icons (
+	    id integer NOT NULL,
+	    name character varying(255),
+	    thumbnail_file_name character varying(255),
+	    thumbnail_content_type character varying(255),
+	    thumbnail_file_size integer,
+	    thumbnail_updated_at timestamp without time zone,
+	    created_at timestamp without time zone,
+	    updated_at timestamp without time zone
+	);
+ERROR:  relation "icons_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE icons_id_seq
+	    INCREMENT BY 1
+	    NO MAXVALUE
+	    NO MINVALUE
+	    CACHE 1;
+ERROR:  relation "point_of_interests" already exists
+STATEMENT:  CREATE TABLE point_of_interests (
+	    id integer NOT NULL,
+	    event_id integer,
+	    name character varying(255),
+	    description text,
+	    latitude double precision,
+	    longitude double precision,
+	    created_at timestamp without time zone,
+	    updated_at timestamp without time zone
+	);
+ERROR:  relation "point_of_interests_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE point_of_interests_id_seq
+	    INCREMENT BY 1
+	    NO MAXVALUE
+	    NO MINVALUE
+	    CACHE 1;
+ERROR:  relation "schema_migrations" already exists
+STATEMENT:  CREATE TABLE schema_migrations (
+	    version character varying(255) NOT NULL
+	);
+ERROR:  relation "subscribers" already exists
+STATEMENT:  CREATE TABLE subscribers (
+	    id integer NOT NULL,
+	    first_name character varying(255),
+	    last_name character varying(255),
+	    email character varying(255),
+	    created_at timestamp without time zone,
+	    updated_at timestamp without time zone
+	);
+ERROR:  relation "subscribers_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE subscribers_id_seq
+	    INCREMENT BY 1
+	    NO MAXVALUE
+	    NO MINVALUE
+	    CACHE 1;
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE users (
+	    id integer NOT NULL,
+	    email character varying(255) DEFAULT ''::character varying NOT NULL,
+	    encrypted_password character varying(128) DEFAULT ''::character varying NOT NULL,
+	    reset_password_token character varying(255),
+	    reset_password_sent_at timestamp without time zone,
+	    remember_created_at timestamp without time zone,
+	    sign_in_count integer DEFAULT 0,
+	    current_sign_in_at timestamp without time zone,
+	    last_sign_in_at timestamp without time zone,
+	    current_sign_in_ip character varying(255),
+	    last_sign_in_ip character varying(255),
+	    created_at timestamp without time zone,
+	    updated_at timestamp without time zone
+	);
+ERROR:  relation "users_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE users_id_seq
+	    INCREMENT BY 1
+	    NO MAXVALUE
+	    NO MINVALUE
+	    CACHE 1;
+ERROR:  duplicate key value violates unique constraint "categories_pkey"
+DETAIL:  Key (id)=(3) already exists.
+CONTEXT:  COPY categories, line 5: ""
+STATEMENT:  COPY categories (id, name, description, created_at, updated_at, thumbnail_file_name, thumbnail_content_type, thumbnail_file_size, thumbnail_updated_at) FROM stdin;
+ERROR:  duplicate key value violates unique constraint "events_pkey"
+DETAIL:  Key (id)=(423) already exists.
+CONTEXT:  COPY events, line 223: "221	Upper Midwest Flooding - Ashton	Flood	44.997	-98.480999999999995	2011-06-03 00:00:00	2011-06-03 ..."
+STATEMENT:  COPY events (id, name, description, latitude, longitude, event_date, created_at, updated_at, news_link, glide_number, event_label, aoi_size, active_start_date, active_end_date, firstwatch_link, icon_id, available_in_r3, available_in_commercial) FROM stdin;
+ERROR:  duplicate key value violates unique constraint "icons_pkey"
+DETAIL:  Key (id)=(1) already exists.
+CONTEXT:  COPY icons, line 21: ""
+STATEMENT:  COPY icons (id, name, thumbnail_file_name, thumbnail_content_type, thumbnail_file_size, thumbnail_updated_at, created_at, updated_at) FROM stdin;
+ERROR:  duplicate key value violates unique constraint "point_of_interests_pkey"
+DETAIL:  Key (id)=(3) already exists.
+CONTEXT:  COPY point_of_interests, line 312: ""
+STATEMENT:  COPY point_of_interests (id, event_id, name, description, latitude, longitude, created_at, updated_at) FROM stdin;
+ERROR:  duplicate key value violates unique constraint "unique_schema_migrations"
+DETAIL:  Key (version)=(20110330215044) already exists.
+CONTEXT:  COPY schema_migrations, line 24: ""
+STATEMENT:  COPY schema_migrations (version) FROM stdin;
+ERROR:  duplicate key value violates unique constraint "subscribers_pkey"
+DETAIL:  Key (id)=(1) already exists.
+CONTEXT:  COPY subscribers, line 7: ""
+STATEMENT:  COPY subscribers (id, first_name, last_name, email, created_at, updated_at) FROM stdin;
+ERROR:  duplicate key value violates unique constraint "users_pkey"
+DETAIL:  Key (id)=(3) already exists.
+CONTEXT:  COPY users, line 5: ""
+STATEMENT:  COPY users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at) FROM stdin;
+ERROR:  multiple primary keys for table "categories" are not allowed
+STATEMENT:  ALTER TABLE ONLY categories
+	    ADD CONSTRAINT categories_pkey PRIMARY KEY (id);
+ERROR:  multiple primary keys for table "events" are not allowed
+STATEMENT:  ALTER TABLE ONLY events
+	    ADD CONSTRAINT events_pkey PRIMARY KEY (id);
+ERROR:  multiple primary keys for table "icons" are not allowed
+STATEMENT:  ALTER TABLE ONLY icons
+	    ADD CONSTRAINT icons_pkey PRIMARY KEY (id);
+ERROR:  multiple primary keys for table "point_of_interests" are not allowed
+STATEMENT:  ALTER TABLE ONLY point_of_interests
+	    ADD CONSTRAINT point_of_interests_pkey PRIMARY KEY (id);
+ERROR:  multiple primary keys for table "subscribers" are not allowed
+STATEMENT:  ALTER TABLE ONLY subscribers
+	    ADD CONSTRAINT subscribers_pkey PRIMARY KEY (id);
+ERROR:  multiple primary keys for table "users" are not allowed
+STATEMENT:  ALTER TABLE ONLY users
+	    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+ERROR:  relation "index_users_on_email" already exists
+STATEMENT:  CREATE UNIQUE INDEX index_users_on_email ON users USING btree (email);
+ERROR:  relation "index_users_on_reset_password_token" already exists
+STATEMENT:  CREATE UNIQUE INDEX index_users_on_reset_password_token ON users USING btree (reset_password_token);
+ERROR:  relation "unique_schema_migrations" already exists
+STATEMENT:  CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
+ERROR:  cannot drop a template database
+STATEMENT:  DROP DATABASE template0;
+	
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP INDEX flms.unique_schema_migrations;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP INDEX flms.index_users_on_reset_password_token;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP INDEX flms.index_users_on_email;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.users DROP CONSTRAINT users_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.subscribers DROP CONSTRAINT subscribers_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.point_of_interests DROP CONSTRAINT point_of_interests_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.icons DROP CONSTRAINT icons_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.events DROP CONSTRAINT events_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE ONLY flms.categories DROP CONSTRAINT categories_pkey;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.users ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.subscribers ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.point_of_interests ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.icons ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.events ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  ALTER TABLE flms.categories ALTER COLUMN id DROP DEFAULT;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.users_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.users;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.subscribers_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.subscribers;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.schema_migrations;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.point_of_interests_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.point_of_interests;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.icons_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.icons;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.events_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.events;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SEQUENCE flms.categories_id_seq;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.categories_events;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP TABLE flms.categories;
+ERROR:  schema "flms" does not exist
+STATEMENT:  DROP SCHEMA flms;
+ERROR:  relation "categories" does not exist at character 15
+STATEMENT:  select * from categories;
+FATAL:  database "flms" does not exist
+FATAL:  role "dglabs" does not exist
+ERROR:  column "has_recent_imagery" of relation "events" does not exist at character 21
+STATEMENT:  UPDATE "events" SET has_recent_imagery = 'f'
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down

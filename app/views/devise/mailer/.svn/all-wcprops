@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/app/views/devise/mailer
+END
+reset_password_instructions.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/app/views/devise/mailer/reset_password_instructions.html.erb
+END
+confirmation_instructions.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/app/views/devise/mailer/confirmation_instructions.html.erb
+END
+unlock_instructions.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/app/views/devise/mailer/unlock_instructions.html.erb
+END

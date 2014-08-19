@@ -1,0 +1,14 @@
+<p><%= image_tag attachments['upper'].url -%></p>
+<p><%= image_tag attachments['icon'].url -%><br/><br/>
+<b><%= @event.name %></b> was created at <%= @event.created_at %>.<br /><br/>
+<% @event.html_formatted_description.each do |line| %>
+	<%= line %><br/>
+<% end %></br></br>
+<% if !@event.news_link.blank? %>
+	<p>Related: <%= link_to @event.news_link, @event.news_link %>
+<% end %>
+<p>Latitude:<%= number_with_precision(@event.latitude) %> | Longitude: <%= number_with_precision(@event.longitude) %>
+<p>To find out more please visit the <%= link_to 'FirstLook Product page.' ,'http://www.digitalglobe.com/firstlook-coverage' %></p>
+
+<p>FirstLook Monitoring Team</p>
+<p><%= image_tag attachments['lower'].url -%></p>

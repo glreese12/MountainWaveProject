@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/test/functional
+END
+notifier_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/test/functional/notifier_test.rb
+END
+point_of_interests_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/test/functional/point_of_interests_controller_test.rb
+END
+events_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/test/functional/events_controller_test.rb
+END
+categories_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/test/functional/categories_controller_test.rb
+END
+subscribers_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/test/functional/subscribers_controller_test.rb
+END

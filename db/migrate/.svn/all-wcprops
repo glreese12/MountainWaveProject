@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/rd/!svn/ver/8001/projects/firstLookMessaging/trunk/db/migrate
+END
+20111024210758_add_aoi_size_to_event.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20111024210758_add_aoi_size_to_event.rb
+END
+20110523210356_devise_create_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20110523210356_devise_create_users.rb
+END
+20110330222046_add_thumbnail_to_category.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20110330222046_add_thumbnail_to_category.rb
+END
+20111107164104_add_active_dates_to_events.rb
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20111107164104_add_active_dates_to_events.rb
+END
+20120612174818_add_icon_id_to_event.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20120612174818_add_icon_id_to_event.rb
+END
+20120612154820_remove_event_id_from_icons.rb
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20120612154820_remove_event_id_from_icons.rb
+END
+20111024161842_add_event_label_to_event.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20111024161842_add_event_label_to_event.rb
+END
+20111107163123_remove_active_from_events.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20111107163123_remove_active_from_events.rb
+END
+20121102175819_add_available_in_r3_to_event.rb
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/rd/!svn/ver/5643/projects/firstLookMessaging/trunk/db/migrate/20121102175819_add_available_in_r3_to_event.rb
+END
+20111107175740_add_firstwatch_link_to_events.rb
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20111107175740_add_firstwatch_link_to_events.rb
+END
+20110629171640_add_news_link_to_events.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20110629171640_add_news_link_to_events.rb
+END
+20120612145243_create_icons.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20120612145243_create_icons.rb
+END
+20110701193612_create_point_of_interests.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20110701193612_create_point_of_interests.rb
+END
+20110330215044_create_categories.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20110330215044_create_categories.rb
+END
+20111208212131_create_subscribers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20111208212131_create_subscribers.rb
+END
+20120612152605_add_event_id_to_icons.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20120612152605_add_event_id_to_icons.rb
+END
+20110331193849_create_events.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20110331193849_create_events.rb
+END
+20111024161317_add_glide_number_to_event.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20111024161317_add_glide_number_to_event.rb
+END
+20110330223208_change_column_description_to_text.rb
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20110330223208_change_column_description_to_text.rb
+END
+20130129223020_add_available_in_commercial_to_event.rb
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/rd/!svn/ver/6404/projects/firstLookMessaging/trunk/db/migrate/20130129223020_add_available_in_commercial_to_event.rb
+END
+20130724233452_addhas_recent_imagery_topoint_of_interests.rb
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/rd/!svn/ver/8001/projects/firstLookMessaging/trunk/db/migrate/20130724233452_addhas_recent_imagery_topoint_of_interests.rb
+END
+20120612151417_remove_thumbnail_from_events.rb
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20120612151417_remove_thumbnail_from_events.rb
+END
+20110401150208_create_categories_events_join_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20110401150208_create_categories_events_join_table.rb
+END
+20111024162203_rename_eventdate_column_name.rb
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/db/migrate/20111024162203_rename_eventdate_column_name.rb
+END

@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%= @point_of_interest.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @point_of_interest.description %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @point_of_interest.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @point_of_interest.longitude %>
+</p>
+
+
+<%= link_to 'Edit', edit_event_point_of_interest_path(@event) %> |
+<%= link_to 'Back', event_point_of_interests_path %>

@@ -1,0 +1,6 @@
+<h1>Editing <%= @point_of_interest.name %></h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', event_point_of_interest_path %> |
+<%= link_to 'Back', event_point_of_interests_path %>

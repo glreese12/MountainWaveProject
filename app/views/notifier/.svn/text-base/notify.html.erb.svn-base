@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>
+<p><%= image_tag attachments['upper.png'].url, alt: 'Upper Banner', class: 'photos'  %></p>
+<p><%= image_tag attachments['icon.png'].url, alt: 'Icon', class: 'photos'  %><br/><br/>
+<b><%= @event.name %></b> was created at <%= @event.created_at %>.<br /><br/>
+<% @event.html_formatted_description.each do |line| %>
+	<%= line %><br/>
+<% end %></br></br>
+<% if !@event.news_link.blank? %>
+	<p>Related: <%= link_to @event.news_link, @event.news_link %>
+<% end %>
+<p>Latitude:<%= number_with_precision(@event.latitude) %> | Longitude: <%= number_with_precision(@event.longitude) %>
+<p>To find out more please visit the <%= link_to 'FirstLook Product page.' ,'http://www.digitalglobe.com/firstlook-coverage' %></p>
+
+<p>FirstLook Monitoring Team</p>
+<p><%= image_tag attachments['lower.png'].url, alt: 'Lower Banner', class: 'photos' %></p>
+</body>
+</html>

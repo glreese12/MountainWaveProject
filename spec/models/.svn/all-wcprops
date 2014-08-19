@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/spec/models
+END
+subscriber_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/spec/models/subscriber_spec.rb
+END
+icon_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/spec/models/icon_spec.rb
+END
+point_of_interest_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/spec/models/point_of_interest_spec.rb
+END
+category_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/spec/models/category_spec.rb
+END
+event_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/spec/models/event_spec.rb
+END

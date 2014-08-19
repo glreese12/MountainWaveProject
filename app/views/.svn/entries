@@ -1,0 +1,52 @@
+10
+
+dir
+8277
+https://svn.digitalglobe.com/svn/rd/projects/firstLookMessaging/trunk/app/views
+https://svn.digitalglobe.com/svn/rd
+
+
+
+2013-08-30T17:13:35.905789Z
+8208
+nricklin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1d478463-37bf-496b-a598-58d0acbf1c5c
+
+devise
+dir
+
+notifier
+dir
+
+layouts
+dir
+
+events
+dir
+
+categories
+dir
+
+subscribers
+dir
+
+icons
+dir
+
+point_of_interests
+dir
+

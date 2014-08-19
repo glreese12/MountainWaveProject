@@ -1,0 +1,27 @@
+<div id="event">
+	<h1>Points of Interest for <%= @event.name %></h1>
+	<div id="new_link">
+		<%= link_to 'New Point of interest', new_event_point_of_interest_path %>
+	</div>
+	<% @point_of_interests.each do |point_of_interest| %>
+	<div class="main">
+		<div class="side">
+			<%= image_tag @event.icon.thumbnail(:thumb) %>
+			<p><%= point_of_interest.created_at %></p>
+		</div>
+		<div class="header">
+			<p><h3><%= link_to point_of_interest.name, event_point_of_interest_path(@event,point_of_interest) %></h3></p>
+			<p><%= point_of_interest.description %></p>
+			<p>Latitude: <%= point_of_interest.latitude %></p>
+			<p>Longitude: <%= point_of_interest.longitude %></p>
+		</div>
+
+		<div class="actions">
+			<%= link_to 'Show', event_point_of_interest_path(@event,point_of_interest) %> |
+			<%= link_to 'Edit', edit_event_point_of_interest_path(point_of_interest.event, point_of_interest) %> |
+			<%= link_to 'Destroy', point_of_interest.event, :confirm => 'Are you sure?', :method => :delete %>
+		</div>
+	</div>
+	<% end %>
+</div>
+<%= link_to 'Back', events_path %>

@@ -1,0 +1,12 @@
+<p>
+  <%= image_tag @icon.thumbnail.url(:thumb) %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @icon.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_icon_path(@icon) %> |
+<%= link_to 'Back', icons_path %>

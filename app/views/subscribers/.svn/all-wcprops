@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/app/views/subscribers
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/app/views/subscribers/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/app/views/subscribers/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/app/views/subscribers/new.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/app/views/subscribers/show.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/app/views/subscribers/_form.html.erb
+END

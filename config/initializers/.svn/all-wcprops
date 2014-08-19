@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/config/initializers
+END
+inflections.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/config/initializers/inflections.rb
+END
+devise.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/config/initializers/devise.rb
+END
+session_store.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/config/initializers/session_store.rb
+END
+secret_token.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/config/initializers/secret_token.rb
+END
+backtrace_silencers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/config/initializers/backtrace_silencers.rb
+END
+mime_types.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/config/initializers/mime_types.rb
+END

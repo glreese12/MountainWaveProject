@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/test/unit
+END
+user_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/test/unit/user_test.rb
+END
+event_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/test/unit/event_test.rb
+END
+subscriber_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/test/unit/subscriber_test.rb
+END
+point_of_interest_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/test/unit/point_of_interest_test.rb
+END
+category_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/test/unit/category_test.rb
+END

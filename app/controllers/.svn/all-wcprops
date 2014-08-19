@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/rd/!svn/ver/8208/projects/firstLookMessaging/trunk/app/controllers
+END
+icons_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/app/controllers/icons_controller.rb
+END
+point_of_interests_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/rd/!svn/ver/8000/projects/firstLookMessaging/trunk/app/controllers/point_of_interests_controller.rb
+END
+application_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/app/controllers/application_controller.rb
+END
+events_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/rd/!svn/ver/8208/projects/firstLookMessaging/trunk/app/controllers/events_controller.rb
+END
+categories_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/app/controllers/categories_controller.rb
+END
+subscribers_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/app/controllers/subscribers_controller.rb
+END

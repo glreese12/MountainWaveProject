@@ -1,0 +1,49 @@
+<div id="event">
+	<h1>All Events</h1>
+	<div id="new_link">
+		<%= link_to 'New Event', new_event_path %>
+	</div>
+	<% @events.each do |event| %>
+	<div class="main">
+		<div class="header">
+			<div class="side">
+				<%= image_tag event.icon.thumbnail(:thumb) %>
+				<p><%= event.event_date %></p>
+			</div>
+			<h3><%= link_to event.name + " (#{event.point_of_interests.count})", event_point_of_interests_path(event) %>
+				<%= " - #{event.humanized_active_name}"%>
+				<% if event.available_in_r3 %>
+					<% if event.available_in_commercial %>
+						<%= "(R3 + Commercial)" %>
+					<% else %>
+						<%= "(R3)" %>
+					<% end %>
+				<% else %>
+					<%= "(Commercial)" %>
+				<% end %>
+			</h3>
+			<%= event.description %>
+			<p>Latitude: <%= event.latitude %> | Longitude: <%= event.longitude %></p>
+			<% if !event.news_link.blank? %>
+				<p><%= link_to 'Related News', event.news_link, 
+				:confirm => "You are about to redirect to a different site.\nAre you sure you want to do this?" %></p>
+			<% end %>
+			<% if !event.firstwatch_link.blank? %>
+				<p><%= link_to 'FirstWatch Report', event.firstwatch_link, 
+				:confirm => "You are about to redirect to a different site.\nAre you sure you want to do this?" %></p>
+			<% end %>
+			<% if !event.glide_number.blank? %>
+				<p>GLIDE Number: <%= event.glide_number %></p>
+			<% end %>
+			<p>Tags: <%= event.categories.map{|cat| cat.name}.join(",") %></p>
+		</div>
+		<div class="actions">
+			<%= link_to 'Show', event %> |
+			<%= link_to 'Edit', edit_event_path(event) %> |
+			<%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %> |
+			<b><%= link_to "Notify", event_send_mail_path(event), 
+			:confirm => "This will notify all Subscribers.\nAre you sure you want to do this?" %></b>
+		</div>
+	</div>
+	<% end %>
+</div>

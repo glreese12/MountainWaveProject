@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/rd/!svn/ver/8208/projects/firstLookMessaging/trunk/app/sweepers
+END
+point_of_interest_sweeper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/rd/!svn/ver/8208/projects/firstLookMessaging/trunk/app/sweepers/point_of_interest_sweeper.rb
+END
+category_sweeper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/app/sweepers/category_sweeper.rb
+END
+event_sweeper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/rd/!svn/ver/6775/projects/firstLookMessaging/trunk/app/sweepers/event_sweeper.rb
+END

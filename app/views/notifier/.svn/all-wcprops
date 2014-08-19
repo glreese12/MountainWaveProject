@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/rd/!svn/ver/6553/projects/firstLookMessaging/trunk/app/views/notifier
+END
+event_created.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/rd/!svn/ver/5016/projects/firstLookMessaging/trunk/app/views/notifier/event_created.html.erb
+END
+notify.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rd/!svn/ver/6553/projects/firstLookMessaging/trunk/app/views/notifier/notify.html.erb
+END

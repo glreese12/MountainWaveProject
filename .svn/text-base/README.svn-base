@@ -1,0 +1,58 @@
+== Welcome to the FirstLook Messaging Service (FLMS)
+
+FLMS is a service utilized by the Analysis Center to manage the creation and 
+sharing of Events for the FirstLook product which are exposed in a variety of 
+formats through this application.
+
+== Environments
+1. development
+2. test
+3. bi
+4. production
+
+== Deployment
+Deployment for FLMS runs under the osgeousr user. FLMS utilizes Apache with Phusion
+Passenger.  The apache/conf files for passenger can be found in /home/osgeousr/apache.
+
+The deployment directory structure is as follows:
+/releases - holds all previous releases
+/current - a symlink to the latest release
+/shared
+	/config - houses the database.yml (symlinked from /current)
+	/log - houses the current log files
+	/pids - houses the pids
+	/system
+		/thumbnails - houses the thumbnails used by paperclip (symlinked from current)
+		
+1. bi deployment
+To successfully run the deployment in the bi environment execute the following
+commands:
+  a. cap bi deploy
+
+The deploy will run against all servers listed in the bi.rb deploy script under 
+config/deploy. Note the database is set to no_update which does not deploy code to
+the :db role and instead is only used as the source to run migrations against. 
+Following a successful deployment migrations will be run against 
+the bi database schema and the server will be restarted.
+
+2. production deployment
+The production servers exist inside the DMZ so all production deployments must
+occur from the gdwsjmplgmt02 host. To successfully run the deploy, login into the 
+jump host and:
+	a. Checkout the firstLookMessaging project to the /home/osgeousr/prod_deploy directory
+	This directory will serve 2 purposes: 1. It will be the directory that you issue the cap
+	commands from and 2. It will be the local_cache copy that you deploy to the production 
+	servers since they don't have access to SVN.
+	IMPORTANT: Check out the version of the app that you want to deploy and put it in the 
+	/home/osgeousr/prod_deploy/firstLookMessaging directory (see /deploy/production.rb for details)
+	b. cd into /home/osgeousr/prod_deploy/firstLookMessaging
+	c. run 'cap production deploy'
+
+The production deploy uses the local copy of the current version on the jump host to 
+distribute to hosts within the DMZ (DMZ hosts cannot reach svn.digitalglobe.com). The 
+code will be deployed and migrations run, followed by a server restart.
+
+It's important to note that in order to scale this system horizontally, the /dg/local/firstLookMessaging/shared/system
+directory is symlinked to a small amount of shared storage (/mnt/flms) this allows us to write any uploaded files to a 
+shared directory for all of the nodes to access.  The symlink is created by cd'ing into 
+/dg/local/firstLookMessaging/shared and running 'ln -nsf /mnt/flms/system system'.

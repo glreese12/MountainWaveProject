@@ -1,0 +1,24 @@
+<div id="subscriber">
+
+<h1>FirstLook Subscriber's</h1>
+<div id="new_link">
+	<%= link_to 'New Subscriber', new_subscriber_path %>
+</div>	
+
+<div class="main">
+<table>
+<% @subscribers.each do |subscriber| %>
+<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    <td><%= subscriber.first_name %></td>
+    <td><%= subscriber.last_name %></td>
+    <td><%= subscriber.email %></td>
+<% if user_signed_in? %>
+    <td><%= link_to 'Edit', edit_subscriber_path(subscriber) %></td>
+    <td><%= link_to 'Destroy', subscriber, :confirm => 'Are you sure?', :method => :delete %></td>
+<% end %>
+  </tr>
+<% end %>
+</table>
+</div>
+
+</div>

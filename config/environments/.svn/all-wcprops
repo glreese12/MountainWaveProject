@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/rd/!svn/ver/5080/projects/firstLookMessaging/trunk/config/environments
+END
+test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/rd/!svn/ver/5080/projects/firstLookMessaging/trunk/config/environments/test.rb
+END
+development.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rd/!svn/ver/5080/projects/firstLookMessaging/trunk/config/environments/development.rb
+END
+production.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/rd/!svn/ver/5080/projects/firstLookMessaging/trunk/config/environments/production.rb
+END
+bi.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/rd/!svn/ver/5080/projects/firstLookMessaging/trunk/config/environments/bi.rb
+END
